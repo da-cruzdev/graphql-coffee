@@ -22,6 +22,7 @@ import { PubSubModule } from './pub-sub/pub-sub.module';
       password: 'pass123',
       autoLoadEntities: true,
       synchronize: true,
+      logging: ['query'],
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
