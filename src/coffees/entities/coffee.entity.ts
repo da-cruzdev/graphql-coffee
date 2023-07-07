@@ -3,6 +3,7 @@ import { type } from 'os';
 import { json } from 'stream/consumers';
 import {
   Column,
+  CreateDateColumn,
   Entity,
   JoinTable,
   ManyToMany,
@@ -26,4 +27,7 @@ export class Coffee {
   @JoinTable()
   @ManyToMany((type) => Flavor, (flavor) => flavor.coffees, { cascade: true })
   flavors?: Flavor[];
+
+  @CreateDateColumn()
+  createdAt: Date;
 }
